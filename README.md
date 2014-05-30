@@ -1,7 +1,5 @@
-## Timeline
+## Prerender.io Talk for CBusJS
 
-A timeline slider built with jQuery.
+July, 2014
 
-This slider is mobile-friendly and was designed for dynamic data insertion for ease of use with frameworks such as Django or AngularJS.
-
-View the demo here: [nupykl.github.io/timeline](http://nupykl.github.io/timeline/).
+See the slides here: [janmilosh.github.io/prerender-talk](http://janmilosh.github.io/prerender-talk/).
