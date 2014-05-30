@@ -2,8 +2,8 @@ $(document).ready(function() {
   'use strict';
 
   // Variables that we might want to adjust
-  var timelineNavBottomMargin = 20;
-  var textContainerBottomMargin = 100;
+  var sliderNavBottomMargin = 0;
+  //var textContainerBottomMargin = 0;
   var maxSpeed = 1000;
   var minSpeed = 500;
 
@@ -11,12 +11,12 @@ $(document).ready(function() {
   var sliderWrapper = $('.slider-wrapper');
   var sliderInner = $('.slider-inner');
   var dateBox = $('.date-box');
-  var timelineNav = $('.timeline-nav');
+  var sliderNav = $('.slider-nav');
   var previous = $('.previous');
   var next = $('.next');
   var dates = $('.dates');
   var dateInner = $('.date-inner');
-  var textContainer = $('.text-container');
+  //var textContainer = $('.text-container');
   
   // Set initial values
   var activeSlide = sliderInner.first();
@@ -30,9 +30,9 @@ $(document).ready(function() {
 
   // Calculate element's heights
   var dateHeight = dates.height();
-  var timelineNavHeight = timelineNav.outerHeight();
-  var textContainerHeight = textContainer.outerHeight();
-  
+  var sliderNavHeight = sliderNav.outerHeight();
+  //var textContainerHeight = textContainer.outerHeight();
+
   // Determine the position of the slides and elements based on
   // the header height, the dates height, and max image height;
   function positionElements() {
@@ -44,13 +44,13 @@ $(document).ready(function() {
     }
     var sliderWrapperHeight = timelineHeight + dateHeight;
     var dateTop = timelineHeight;
-    var timelineNavTop = timelineHeight - timelineNavBottomMargin - timelineNavHeight;
-    var textContainerTop = timelineHeight - textContainerHeight - textContainerBottomMargin;
-    // Set the slider, date box, and navigation arrow positions
+    var sliderNavTop = timelineHeight - sliderNavBottomMargin - sliderNavHeight;
+    //var textContainerTop = (timelineHeight - textContainerHeight)/2;
+    // Set the slider, date box, and navigation positions
     dates.css('top', dateTop);
     sliderInner.css('height', timelineHeight);
-    timelineNav.css('top', timelineNavTop);
-    textContainer.css('top', textContainerTop);
+    sliderNav.css('top', sliderNavTop);
+    //textContainer.css('margin-top', textContainerTop);
     sliderWrapper.css('height', sliderWrapperHeight);
   }
 
@@ -158,7 +158,7 @@ $(document).ready(function() {
   previous.on('click', slideRight);
 
   // Navigate to the previous slide on swiperight event
-  $('.slider-inner, .timeline-nav').on('swiperight', slideRight);
+  $('.slider-inner, .slider-nav').on('swiperight', slideRight);
    
   function slideRight(){    
     if (slideIndex === 0) {
@@ -175,7 +175,7 @@ $(document).ready(function() {
   next.on('click', slideLeft);
 
   // Navigate to the next slide on swipeleft event
-  $('.slider-inner, .timeline-nav').on('swipeleft', slideLeft);
+  $('.slider-inner, .slider-nav').on('swipeleft', slideLeft);
 
   function slideLeft() {
     if (slideIndex === slideTotal - 1) {
