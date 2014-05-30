@@ -8,31 +8,29 @@ $(document).ready(function() {
   var minSpeed = 500;
 
   // Get objects from DOM
-  var timelineWrapper = $('.timeline-wrapper');
-  var timelineInner = $('.timeline-inner');
+  var sliderWrapper = $('.slider-wrapper');
+  var sliderInner = $('.slider-inner');
   var dateBox = $('.date-box');
   var timelineNav = $('.timeline-nav');
   var previous = $('.previous');
   var next = $('.next');
   var dates = $('.dates');
   var dateInner = $('.date-inner');
-  var headerWrapper = $('.header-wrapper');
   var textContainer = $('.text-container');
   
   // Set initial values
-  var activeSlide = timelineInner.first();
+  var activeSlide = sliderInner.first();
   var activeSlideId = activeSlide.attr('id');
   var nextSlideId;
   var dateBoxId;
   var slideIndex = 0;
-  var slideTotal = timelineInner.length;
+  var slideTotal = sliderInner.length;
   var dateInnerWidth = dateBox.length * dateBox.outerWidth();
   dateInner.css('width', dateInnerWidth + 'px');
 
   // Calculate element's heights
   var dateHeight = dates.height();
   var timelineNavHeight = timelineNav.outerHeight();
-  var headerHeight = headerWrapper.height();
   var textContainerHeight = textContainer.outerHeight();
   
   // Determine the position of the slides and elements based on
@@ -40,20 +38,20 @@ $(document).ready(function() {
   function positionElements() {
     // Set a maximum height for the timeline (typically to match the image height)
     var windowHeight = $(window).height();
-    var timelineHeight = windowHeight - dateHeight - headerHeight;
-    if (timelineHeight > 700) {
-      timelineHeight = 700;
+    var timelineHeight = windowHeight;
+    if (timelineHeight > 900) {
+      timelineHeight = 900;
     }
-    var timelineWrapperHeight = timelineHeight + dateHeight;
+    var sliderWrapperHeight = timelineHeight + dateHeight;
     var dateTop = timelineHeight;
     var timelineNavTop = timelineHeight - timelineNavBottomMargin - timelineNavHeight;
     var textContainerTop = timelineHeight - textContainerHeight - textContainerBottomMargin;
     // Set the slider, date box, and navigation arrow positions
     dates.css('top', dateTop);
-    timelineInner.css('height', timelineHeight);
+    sliderInner.css('height', timelineHeight);
     timelineNav.css('top', timelineNavTop);
     textContainer.css('top', textContainerTop);
-    timelineWrapper.css('height', timelineWrapperHeight);
+    sliderWrapper.css('height', sliderWrapperHeight);
   }
 
   // Set the selected class to the date-box and set new ID's
@@ -64,7 +62,7 @@ $(document).ready(function() {
     current.addClass('selected');
     scrollToSelectedDate();
     dateBoxId = current.attr('id');
-    nextSlideId = dateBoxId + '-img';
+    nextSlideId = dateBoxId + '-slide';
   }
 
   var speed = function() {
@@ -137,7 +135,7 @@ $(document).ready(function() {
     
   // Hide the slides, then show only the active one
   // (first slide is shown on load)
-  timelineInner.hide();
+  sliderInner.hide();
   activeSlide.show();
 
   // Navigate to slide corresponding to the clicked date-box
@@ -147,7 +145,7 @@ $(document).ready(function() {
     $(this).addClass('selected');
     slideIndex = $(this).index();
     dateBoxId = $(this).attr('id');
-    nextSlideId = dateBoxId + '-img';
+    nextSlideId = dateBoxId + '-slide';
     if (slideIndex > previousIndex) {
       slideNext();
     } else {
@@ -160,7 +158,7 @@ $(document).ready(function() {
   previous.on('click', slideRight);
 
   // Navigate to the previous slide on swiperight event
-  $('.timeline-inner, .timeline-nav').on('swiperight', slideRight);
+  $('.slider-inner, .timeline-nav').on('swiperight', slideRight);
    
   function slideRight(){    
     if (slideIndex === 0) {
@@ -177,7 +175,7 @@ $(document).ready(function() {
   next.on('click', slideLeft);
 
   // Navigate to the next slide on swipeleft event
-  $('.timeline-inner, .timeline-nav').on('swipeleft', slideLeft);
+  $('.slider-inner, .timeline-nav').on('swipeleft', slideLeft);
 
   function slideLeft() {
     if (slideIndex === slideTotal - 1) {
