@@ -9,14 +9,14 @@ body {
   background: white;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, h5, h6, p {
   font-family: 'Varela Round', helvetica, sans-serif;
   color: #384C8B;
   font-weight: normal;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
@@ -32,6 +32,22 @@ h3 {
   font-size: 60px;
 }
 
+h4 {
+  font-size: 50px;
+}
+
+h5 {
+  font-size: 40px;
+}
+
+h6 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
 .clearfix {
   display: block;
   clear: both;
@@ -39,7 +55,7 @@ h3 {
 
 .slider-nav {
   margin: 0;
-  height: 80px;
+  height: 320px;
   position: absolute;
   top: 400px;
   color: white;
@@ -58,7 +74,7 @@ h3 {
 
 .previous,
 .next {
-  height: 100px;
+  height: 320px;
   width: 50%;
   cursor: pointer;
 }
@@ -115,18 +131,14 @@ h3 {
   text-align: center;
 }
 
-.select-box.selected {
+.select-box.selected,
+.select-box.selected:hover {
   background: #E0C8E7;
 }
 
 .select-box:hover {
   background: #F6EDF8;
 }
-
-.select-box.selected:hover {
-  box-shadow: none;
-}
-
 
 @media (max-width: 767px) {
 

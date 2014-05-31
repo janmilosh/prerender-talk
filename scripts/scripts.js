@@ -3,9 +3,27 @@ $(document).ready(function() {
 
   // Variables that we might want to adjust
   var sliderNavBottomMargin = 0;
-  //var textContainerBottomMargin = 0;
   var maxSpeed = 1000;
-  var minSpeed = 500;
+  var minSpeed = 500;  
+  
+  //Adds select boxes to the DOM and sets ID's
+  function createSelectBoxesAndIds() {
+    $('.slider-inner').each(function() {
+      var boxId = $(this).attr('data-id');
+      var slideTitle = $(this).attr('data-title');
+      var slideId = boxId + '-slide';
+      console.log(boxId);
+      console.log(slideId);
+      console.log(slideTitle);
+      $(this).attr('id', slideId);
+      $('.select-inner').append(
+        '<div class="select-box" id="'+ boxId +'"><p>'+ slideTitle +'</p></div>');
+    });
+    $('.select-box').first().addClass('selected');
+  }
+
+  // Set the select box id's, text, and slide id's
+  createSelectBoxesAndIds();
 
   // Get objects from DOM
   var sliderWrapper = $('.slider-wrapper');
@@ -16,7 +34,7 @@ $(document).ready(function() {
   var next = $('.next');
   var selectOuter = $('.select-outer');
   var selectInner = $('.select-inner');
-  
+
   // Set initial values
   var activeSlide = sliderInner.first();
   var activeSlideId = activeSlide.attr('id');
@@ -28,11 +46,11 @@ $(document).ready(function() {
   selectInner.css('width', selectInnerWidth + 'px');
 
   // Calculate element's heights
-  var dateHeight = selectOuter.height();
+  var selectBoxHeight = selectOuter.height();
   var sliderNavHeight = sliderNav.outerHeight();
 
   // Determine the position of the slides and elements based on
-  // the header height, the selectOuter height, and max image height;
+  // the header height, the select box outer height, and max image height;
   function positionElements() {
     // Set a maximum height for the timeline (typically to match the image height)
     var windowHeight = $(window).height();
@@ -40,12 +58,12 @@ $(document).ready(function() {
     if (timelineHeight > 900) {
       timelineHeight = 900;
     }
-    var sliderWrapperHeight = timelineHeight + dateHeight;
-    var dateTop = timelineHeight;
+    var sliderWrapperHeight = timelineHeight + selectBoxHeight;
+    var selectBoxTop = timelineHeight;
     var sliderNavTop = timelineHeight - sliderNavBottomMargin - sliderNavHeight;
     
     // Set the slider, select boxes, and navigation positions
-    selectOuter.css('top', dateTop);
+    selectOuter.css('top', selectBoxTop);
     sliderInner.css('height', timelineHeight);
     sliderNav.css('top', sliderNavTop);
     sliderWrapper.css('height', sliderWrapperHeight);
@@ -67,7 +85,7 @@ $(document).ready(function() {
     selectBox.eq(slideIndex).addClass('selected');
     var current = selectBox.eq(slideIndex);
     current.addClass('selected');
-    scrollToSelectedDate();
+    scrollToSelectedBox();
     selectBoxId = current.attr('id');
     nextSlideId = selectBoxId + '-slide';
   }
@@ -98,12 +116,12 @@ $(document).ready(function() {
 
   // Move the selected slide's corresponding select box into the window
   // if it is out of sight 
-  function scrollToSelectedDate() {
+  function scrollToSelectedBox() {
     var windowWidth = $(window).width();
-    var selectedDate = $('.selected');
-    var selectedOffset = selectedDate.offset().left;
+    var selectedBox = $('.selected');
+    var selectedOffset = selectedBox.offset().left;
     var scrollAmount, selectedIndex;
-    // The scroll movement for when the selectOuter are shifted to the left
+    // The scroll movement for when the select boxes are shifted to the left
     if (selectedOffset < 0) {
       selectBox.each(function() {
         if ($(this).hasClass('selected')) {
@@ -113,7 +131,7 @@ $(document).ready(function() {
       scrollAmount =  selectedIndex * selectBox.outerWidth();
       selectOuter.animate({scrollLeft: scrollAmount + 'px'});      
     } 
-    // The scroll movement for when the select boxes shifted to the right
+    // The scroll movement for when the select boxes are shifted to the right
     if (selectedOffset > windowWidth - selectBox.outerWidth()) {
       selectBox.each(function() {
         if ($(this).hasClass('selected')) {
@@ -126,8 +144,10 @@ $(document).ready(function() {
   }
 
   // Put the elements in their places
-  positionTextOnSlides(); //This is only called once on load as the text height 
-                          //becomes zero once the slides get hidden
+  //This is only called once on load as the text box height 
+  //becomes zero once the slides get hidden
+  positionTextOnSlides(); 
+
   positionElements();
 
   // If the window is resized, get the new window height, then 
@@ -162,12 +182,6 @@ $(document).ready(function() {
     }    
     activeSlideId = nextSlideId;    
   });
-
-  // Navigate to the previous slide upon clicking the previous click area
-  previous.on('click', slideRight);
-
-  // Navigate to the previous slide on swiperight event
-  $('.slider-inner, .slider-nav').on('swiperight', slideRight);
    
   function slideRight(){    
     if (slideIndex === 0) {
@@ -180,11 +194,11 @@ $(document).ready(function() {
     activeSlideId = nextSlideId;
   }
 
-  // Navigate to the next slide upon clicking the next click area
-  next.on('click', slideLeft);
+  // Navigate to the previous slide upon clicking the previous click area
+  previous.on('click', slideRight);
 
-  // Navigate to the next slide on swipeleft event
-  $('.slider-inner, .slider-nav').on('swipeleft', slideLeft);
+  // Navigate to the previous slide on swiperight event
+  $('.slider-inner, .slider-nav').on('swiperight', slideRight);
 
   function slideLeft() {
     if (slideIndex === slideTotal - 1) {
@@ -196,5 +210,11 @@ $(document).ready(function() {
     slideNext();
     activeSlideId = nextSlideId;
   }
+
+  // Navigate to the next slide upon clicking the next click area
+  next.on('click', slideLeft);
+
+  // Navigate to the next slide on swipeleft event
+  $('.slider-inner, .slider-nav').on('swipeleft', slideLeft);
     
 });
