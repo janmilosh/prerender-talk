@@ -10,13 +10,26 @@ body {
 }
 
 h1, h2, h3, p {
-  font-family: helvetica;
-  color: #333;
-  margin: 0 0 16px;
+  font-family: 'Varela Round', helvetica, sans-serif;
+  color: #384C8B;
+  font-weight: normal;
+  margin: 0 0 20px;
 }
 
 h1, h2, h3 {
   text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 60px;
 }
 
 .clearfix {
@@ -45,7 +58,7 @@ h1, h2, h3 {
 
 .previous,
 .next {
-  height: 80px;
+  height: 100px;
   width: 50%;
   cursor: pointer;
 }
@@ -58,69 +71,60 @@ h1, h2, h3 {
   position: absolute;
   width: 100%;
   height: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .text-container {
-  background: #eee;
-  width: 960px;
+  width: 1200px;
   max-width: 90%;
   margin: 0 auto;
   position: relative;
 }
 
-.dates {
+.select-outer {
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
   position: relative;
   top: 500px; 
-  height: 75px;
+  height: 65px;
 }
 
-.date-inner {
+.select-inner {
   width: 2000px;
   height: 60px;
 }
 
-.date-box {
-  padding: 10px;
-  height: 60px;
-  width: 80px;
+.select-box {
+  padding: 14px 0;
+  height: 50px;
+  width: 100px;
   float: left;
   background: white;
-  border-top: 2px solid #ccc;
-  border-right: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #8490B4;
+  border-right: 2px solid #8490B4;
+  border-bottom: 2px solid #8490B4;
   cursor: pointer;
 }
 
-.date-box p {
-  color: #444;
+.select-box:first-child {
+  border-left: 2px solid #8490B4;
+}
+
+.select-box p {
   font-size: 14px;
   text-align: center;
 }
 
-.date-box.selected {
-  background: #dadada;
+.select-box.selected {
+  background: #E0C8E7;
 }
 
-.date-box.selected p {
-  color: #333;
+.select-box:hover {
+  background: #F6EDF8;
 }
 
-.date-box:hover {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-.date-box.selected:hover {
+.select-box.selected:hover {
   box-shadow: none;
-}
-
-.date-box:first-child {
-  border-left: 2px solid #555;
 }
 
 
