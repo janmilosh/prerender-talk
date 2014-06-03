@@ -55,8 +55,8 @@ $(document).ready(function() {
     // Set a maximum height for the timeline (typically to match the image height)
     var windowHeight = $(window).height();
     var timelineHeight = windowHeight;
-    if (timelineHeight > 900) {
-      timelineHeight = 900;
+    if (timelineHeight > 1300) {
+      timelineHeight = 1300;
     }
     var sliderWrapperHeight = timelineHeight + selectBoxHeight;
     var selectBoxTop = timelineHeight;
