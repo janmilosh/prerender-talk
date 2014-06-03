@@ -1,0 +1,10 @@
+img.angular,
+img.ember,
+img.backbone,
+img.jquery {
+  width: 15%;
+  margin-left: 5%;
+}
+img.angular {
+  margin-left: 10%;
+}
