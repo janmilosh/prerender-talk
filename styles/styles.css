@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 50px;
 }
 
+ul {
+  font-family: 'Varela Round', helvetica, sans-serif;
+  color: #384C8B;
+  font-weight: normal;
+  font-size: 40px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
@@ -48,6 +58,15 @@ p {
   font-size: 20px;
 }
 
+a {
+  color: #384C8B;
+}
+
+.panel {
+  padding: 30px 30px 1px;
+  background: #eee;
+}
+
 .clearfix {
   display: block;
   clear: both;
@@ -55,9 +74,9 @@ p {
 
 .slider-nav {
   margin: 0;
-  height: 320px;
+  height: 100px;
   position: absolute;
-  top: 400px;
+  top: 180px;
   color: white;
   font-size: 50px;
   text-align: center;
@@ -74,7 +93,7 @@ p {
 
 .previous,
 .next {
-  height: 320px;
+  height: 100px;
   width: 50%;
   cursor: pointer;
 }
