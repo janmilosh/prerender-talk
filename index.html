@@ -20,7 +20,7 @@
     <div class="slider-inner" data-id="slide2" data-title="Problem">
       <div class="text-container">
         <h1>SEO Problem:</h1>
-        <h3>Indexing pages for single-page apps</h2> 
+        <h3>Indexing pages for single-page apps - where pages are rendered in the browser with JavaScript</h2> 
         <img class="angular" src="images/angular.png">
         <img class="ember" src="images/ember.png">
         <img class="backbone" src="images/backbone.png">
@@ -34,9 +34,9 @@
         <h3>Let googlebots and others know where to find them.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide4" data-title="Now This">
+    <div class="slider-inner" data-id="slide4" data-title="Google blog">
       <div class="text-container">
-        <h1>Then there's this:</h1>
+        <h2>Change is coming:</h2>
         <div class="panel">
           <h3><a href="http://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html" target="_blank">Understanding Web Pages Better</a></h3>
           <h5>Friday, May 23, 2014 at 9:00 AM</h5>
@@ -47,33 +47,46 @@
     </div>
     <div class="slider-inner" data-id="slide5" data-title="Need?">
       <div class="text-container">
-        <h2>Why might we still need this?</h2>
+        <h2>Why we might still need this:</h2>
         <ul>
-          <li>SEO is critical for your app</li>
+          <li>If SEO is critical for your app</li>
           <li>If your JavaScript is too complex</li>
           <li>To be indexed by more search engines</li>
-          <li>Because this is still a new thing.</li>
+          <li>Using JS by crawlers is still new.</li>
         </ul>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide6" data-title="Slide 6">
+    <div class="slider-inner" data-id="slide6" data-title="The Point">
       <div class="text-container">
-        <h1>Slide 6</h1>
+        <h2>There are many methods for serving pre-rendered pages.</h2>
+        <div class="panel">
+          <h3>The point here is to show one way, and that it's quick and easy.</h3>
+        </div>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide7" data-title="Slide 7">
+    <div class="slider-inner" data-id="slide7" data-title="Context">
       <div class="text-container">
-        <h1>Slide 7</h1>
+        <h2>For this presentation:</h2>
+        <ul>
+          <li>AngularJS app (with <a href="http://firebase.com" target="_blank">firebase</a> backend), <a href="http://taskme.us" target="_blank">TaskMe.us</a></li>
+          <li>Apache server (Digital Ocean)</li>
+          <li><a href="http://prerender.io" target="_blank">Prerender.io</a> to serve rendered pages to webcrawlers.</li>
+        </ul>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide8" data-title="Slide 8">
+    
+    <div class="slider-inner" data-id="slide8" data-title="How">
       <div class="text-container">
-        <h1>Slide 8</h1>
+        <h2>How it works:</h2>        
+        <p>In our routing, by changing the hashPrefix to '#!' instead of '#', search engines change the request to use '_escaped_fragment_' instead of '#!'</p>
+        <p>When requests come with an '_escaped_fragment_' querystring, a pre-rendered HTML response is served (instead of your app).</p>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide9" data-title="Slide 9">
+    <div class="slider-inner" data-id="slide9" data-title="How cont.">
       <div class="text-container">
-        <h1>Slide 9</h1>
+        <h2>How it works, cont:</h2>        
+        <p>The Prerender.io service takes care of rendering and serving your pages.</p>
+        <p>For Apache, the .htaccess file tells crawlers where to find the pages.</p>
       </div>
     </div>
     <div class="slider-inner" data-id="slide10" data-title="Slide 10">
@@ -129,6 +142,11 @@
     <div class="slider-inner" data-id="slide20" data-title="Resources">
       <div class="text-container">
         <h1>Resources</h1>
+        <ul>
+          <li><a href="http://prerender.io">Prerender.io</a></li>
+          <li><a href="http://www.ng-newsletter.com/posts/serious-angular-seo.html">ng-newsletter article</a></li>
+          <li><a href="https://docs.angularjs.org/guide/$location">AngularJS Developer Guide/Using $location</a></li>
+        </ul>
       </div>
     </div>
 
