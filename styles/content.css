@@ -8,3 +8,8 @@ img.jquery {
 img.angular {
   margin-left: 10%;
 }
+
+img.centered {
+  display: block;
+  margin: 0 auto;
+}
