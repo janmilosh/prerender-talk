@@ -13,14 +13,14 @@
       <div class="text-container">
         <h1>Prerender.io</h1>
         <h5>July 16, 2014</h5>
-        <h3>Jan Milosh</h3>
-        <h4>@janmilosh</h4>
+        <h5>Jan Milosh @janmilosh</h5>
+        <h4><a href="http://janmilosh.github.io/prerender-talk">janmilosh.github.io/prerender-talk</a></h4>
       </div>
     </div>
     <div class="slider-inner" data-id="slide2" data-title="Problem">
       <div class="text-container">
         <h2>SEO Problem:</h2>
-        <h3>Indexing pages for single-page apps - where pages are rendered in the browser with JavaScript</h2> 
+        <h4>Indexing pages for single-page apps<br>where pages are rendered<br>in the browser with JavaScript.</h4> 
         <img class="angular" src="images/angular.png">
         <img class="ember" src="images/ember.png">
         <img class="backbone" src="images/backbone.png">
@@ -31,16 +31,16 @@
       <div class="text-container">
         <h2>Solution:</h2>
         <h3>Pre-render your pages.</h3>
-        <h4>Let googlebots and others know where to find them.</h4>
+        <h4>Let googlebots and others<br>know where to find them.</h4>
       </div>
     </div>
     <div class="slider-inner" data-id="slide4" data-title="Google blog">
       <div class="text-container">
         <h3>Change is coming:</h3>
         <div class="panel">
-          <h3><a href="http://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html" target="_blank">Understanding Web Pages Better</a></h3>
+          <h4><a href="http://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html" target="_blank">Understanding Web Pages Better</a></h4>
           <h5>Friday, May 23, 2014 at 9:00 AM</h5>
-          <h3><a href="http://googlewebmastercentral.blogspot.com/" target="_blank">Google Webmaster Central Blog</a></h3>
+          <h4><a href="http://googlewebmastercentral.blogspot.com/" target="_blank">Google Webmaster Central Blog</a></h4>
         </div>
           
       </div>
@@ -52,15 +52,16 @@
           <li>If SEO is critical for your app</li>
           <li>If your JavaScript is too complex</li>
           <li>To be indexed by more search engines</li>
-          <li>Using JS by crawlers is still new.</li>
+          <li>Using JS by crawlers is still new</li>
+          <li>Google didn't render test site.</li>
         </ul>
       </div>
     </div>
     <div class="slider-inner" data-id="slide6" data-title="The Point">
       <div class="text-container">
-        <h3>There are many methods for serving pre-rendered pages.</h3>
+        <h3>There are many methods for<br>serving pre-rendered pages.</h3>
         <div class="panel">
-          <h3>The point here is to show one way, and that it's quick and easy.</h3>
+          <h4>The point here is to show one way,<br>and that it's quick and easy.</h4>
         </div>
       </div>
     </div>
@@ -69,7 +70,7 @@
         <h3>For this presentation:</h3>
         <ul>
           <li>AngularJS app (with <a href="http://firebase.com" target="_blank">firebase</a> backend), <a href="http://taskme.us" target="_blank">TaskMe.us</a></li>
-          <li>Apache server (Digital Ocean)</li>
+          <li>Nginx server on Digital Ocean</li>
           <li><a href="http://prerender.io" target="_blank">Prerender.io</a> to serve rendered pages to webcrawlers.</li>
         </ul>
       </div>
@@ -79,9 +80,9 @@
       <div class="text-container">
         <h3>How it works:</h3> 
         <ul>
-          <li>In our routing, change the hashPrefix to '#!'.</li>
-          <li>Search engines change the request to use '_escaped_fragment_' instead of '#!'</li>
-          <li>'_escaped_fragment_' requests are served pre-rendered HTML.</li>
+          <li>In our routing, change the hashPrefix to #!.</li>
+          <li>Search engines change the request to use _escaped_fragment_ instead of #!</li>
+          <li>_escaped_fragment_ requests are served pre-rendered HTML.</li>
         </ul>       
       </div>
     </div>
@@ -91,13 +92,12 @@
         <ul>
           <li>Prerender.io uses a headless browser to render the pages.</li>
           <li>Prerender.io takes care of serving the pages.</li>
-          <li>For Apache, the .htaccess file tells the page location.</li>
+          <li>For Nginx, settings added to the nginx.conf file tell the page location.</li>
         </ul>      
       </div>
     </div>
     <div class="slider-inner" data-id="slide10" data-title="#!">
       <div class="text-container">
-        <h2>Step 1:</h2>
         <h2>Turn off HTML5 mode<br>and<br>set the hash prefix.</h2>
       </div>
     </div>
@@ -108,8 +108,7 @@
     </div>
     <div class="slider-inner" data-id="slide12" data-title="href's">
       <div class="text-container">
-        <h2>Step 2:</h2>
-        <h2>Be sure to change href's to '#!'.</h2>
+        <h2>Be sure to change<br>href's to '#!'</h2>
       </div>
     </div>
     <div class="slider-inner" data-id="slide13" data-title="href img">
@@ -119,33 +118,36 @@
     </div>
     <div class="slider-inner" data-id="slide14" data-title="signup">
       <div class="text-container">
-        <h2>Step 3</h2>
-        <h2>Create <a href="https://prerender.io/signup">Prerender.io</a> account.</h2>
+        <h2>Create <a href="https://prerender.io/signup">Prerender.io</a><br>account.</h2>
+        <h3>Get Prerender.io token.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide15" data-title="signup img">
+    <div class="slider-inner" data-id="slide15" data-title="blank">
       <div class="text-container">
-        <img class="centered" src="images/signup.png" width="876" height="453">
+        <h2>blank</h2>
       </div>
     </div>
     <div class="slider-inner" data-id="slide16" data-title="Slide 16">
       <div class="text-container">
-        <h1>Put token and url in code in .htaccess</h1>
+        <h2>Modify server configuration<br>for serving<br>pre-rendered HTML.</h2>
+        <h4><a href="https://gist.github.com/Stanback/6998085" target="_blank">Nginx.conf</a></h4>
       </div>
     </div>
     <div class="slider-inner" data-id="slide17" data-title="Slide 17">
       <div class="text-container">
-        <h1>Slide 17</h1>
+        <h1>Cached pages</h1>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide18" data-title="Slide 18">
+    <div class="slider-inner" data-id="slide18" data-title="Test it">
       <div class="text-container">
-        <h1>Slide 18</h1>
+        <h1>Check ?_escaped_fragment_=</h1>
+        <h2>Should replace !# and show html in view source.</h2>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide19" data-title="Slide 19">
+    <div class="slider-inner" data-id="slide19" data-title="Google">
       <div class="text-container">
-        <h1>Slide 19</h1>
+        <h1>Google Webmaster Tools</h1>
+        <h2>Fetch as Google</h2>
       </div>
     </div>
     <div class="slider-inner" data-id="slide20" data-title="Resources">

@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Varela Round', helvetica, sans-serif;
   color: #384C8B;
   font-weight: normal;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
 }
 
 ul {
@@ -32,34 +32,35 @@ ul li {
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
+  line-height: 1.4;
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 90px;
 }
 
 h2 {
-  font-size: 80px;
+  font-size: 75px;
 }
 
 h3 {
-  font-size: 60px;
+  font-size: 65px;
 }
 
 h4 {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 h5 {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 28px;
 }
 
 p {
-  font-size: 40px;
+  font-size: 30px;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto 50px;
@@ -72,6 +73,8 @@ a {
 .panel {
   padding: 30px 30px 1px;
   background: #eee;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .clearfix {
@@ -117,7 +120,7 @@ a {
 }
 
 .text-container {
-  width: 1200px;
+  width: 1100px;
   max-width: 90%;
   margin: 0 auto;
   position: relative;
