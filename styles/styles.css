@@ -70,6 +70,16 @@ a {
   color: #384C8B;
 }
 
+.code {
+  font-family: monospace;
+  background: #eee;
+  padding: 15px;
+}
+
+.highlight {
+  background: #eee;
+}
+
 .panel {
   padding: 30px 30px 1px;
   background: #eee;
@@ -172,6 +182,15 @@ a {
 
 @media (max-width: 767px) {
 
+  h1, h2, h3, h4, h5, h6, p, ul, ul li, ul li a {
+    font-size: 20px;
+  }
+
+  img {
+    width:100%;
+    height: 100%;
+    
+
   .text-container {
   }
 }
@@ -179,5 +198,8 @@ a {
 @media (max-width: 400px) {
 
   .text-container {
+  }
+
+  height: auto;
   }
 }

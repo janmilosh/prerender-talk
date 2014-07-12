@@ -74,15 +74,14 @@
           <li><a href="http://prerender.io" target="_blank">Prerender.io</a> to serve rendered pages to webcrawlers.</li>
         </ul>
       </div>
-    </div>
-    
+    </div>    
     <div class="slider-inner" data-id="slide8" data-title="How">
       <div class="text-container">
         <h3>How it works:</h3> 
         <ul>
-          <li>In our routing, change the hashPrefix to #!.</li>
-          <li>Search engines change the request to use _escaped_fragment_ instead of #!</li>
-          <li>_escaped_fragment_ requests are served pre-rendered HTML.</li>
+          <li>In our routing, change the hashPrefix to <span class="highlight">#!</span></li>
+          <li>Search engines change the request to use <span class="highlight">_escaped_fragment_</span> instead of <span class="highlight">#!</span></li>
+          <li><span class="highlight">_escaped_fragment_</span> requests are served pre-rendered HTML.</li>
         </ul>       
       </div>
     </div>
@@ -91,7 +90,8 @@
         <h3>How it works, cont:</h3>  
         <ul>
           <li>Prerender.io uses a headless browser to render the pages.</li>
-          <li>Prerender.io takes care of serving the pages.</li>
+          <li>Prerender.io takes care of serving the pages. </li>
+          <li><a href="https://prerender.io/how-it-works" target="_blank">See detailed explanation.</a></li>
           <li>For Nginx, settings added to the nginx.conf file tell the page location.</li>
         </ul>      
       </div>
@@ -108,7 +108,7 @@
     </div>
     <div class="slider-inner" data-id="slide12" data-title="href's">
       <div class="text-container">
-        <h2>Be sure to change<br>href's to '#!'</h2>
+        <h3>Be sure to change<br>href's to <span class="highlight">#!</span></h3>
       </div>
     </div>
     <div class="slider-inner" data-id="slide13" data-title="href img">
@@ -116,47 +116,58 @@
         <img class="centered" src="images/hrefs.png" width="619" height="380">
       </div>
     </div>
-    <div class="slider-inner" data-id="slide14" data-title="signup">
+    <div class="slider-inner" data-id="slide14" data-title="meta tag">
       <div class="text-container">
-        <h2>Create <a href="https://prerender.io/signup">Prerender.io</a><br>account.</h2>
+        <h4>Add this meta tag<br>to the head of all pages:</h4>
+        <h5 class="code">&lt;meta name="fragment" content="!"&gt;</h5>
+      </div>
+    </div>
+    <div class="slider-inner" data-id="slide15" data-title="signup">
+      <div class="text-container">
+        <h2>Create <a href="https://prerender.io/signup" target="_blank">Prerender.io</a><br>account.</h2>
         <h3>Get Prerender.io token.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide15" data-title="blank">
-      <div class="text-container">
-        <h2>blank</h2>
-      </div>
-    </div>
-    <div class="slider-inner" data-id="slide16" data-title="Slide 16">
+    <div class="slider-inner" data-id="slide16" data-title="Nginx.conf">
       <div class="text-container">
         <h2>Modify server configuration<br>for serving<br>pre-rendered HTML.</h2>
-        <h4><a href="https://gist.github.com/Stanback/6998085" target="_blank">Nginx.conf</a></h4>
+        <h4><a href="https://gist.github.com/Stanback/6998085" target="_blank">Nginx.conf</a> &rarr; <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-virtual-hosts-server-blocks-on-ubuntu-12-04-lts--3" target="blank">Digital Ocean - Nginx</a></h4>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide17" data-title="Slide 17">
+    <div class="slider-inner" data-id="slide17" data-title="Cached">
       <div class="text-container">
-        <h1>Cached pages</h1>
+        <h3>Prerender.io will show your<br><a href="https://prerender.io/" target="_blank">cached pages</a>.</h3>
       </div>
     </div>
     <div class="slider-inner" data-id="slide18" data-title="Test it">
       <div class="text-container">
-        <h1>Check ?_escaped_fragment_=</h1>
-        <h2>Should replace !# and show html in view source.</h2>
+        <h3>Check <span class="highlight">?_escaped_fragment_=</span></h3>
+        <h3>by replacing <span class="highlight">!#</span> and see<br>rendered html in view source.</h3>
       </div>
     </div>
     <div class="slider-inner" data-id="slide19" data-title="Google">
       <div class="text-container">
-        <h1>Google Webmaster Tools</h1>
-        <h2>Fetch as Google</h2>
+        <h2>Google Webmaster Tools</h2>
+        <h4>Set up account and verify.</h4>
+        <h3>Check <span class="highlight">Fetch as Google</span></h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide20" data-title="Resources">
+    <div class="slider-inner" data-id="slide20" data-title="Problems">
       <div class="text-container">
-        <h1>Resources</h1>
+        <h2>Problems</h2>
+        <h4>Trouble with Apache (using .htaccess)</h4>
+        <h5>Server/config related problem??</h5>
+        <h5>Had previous success on shared hosting with Apache.</h5>
+        <h5>Prerender.io (Todd Hooper) was very responsive.</h5>
+      </div>
+    </div>
+    <div class="slider-inner" data-id="slide21" data-title="Resources">
+      <div class="text-container">
+        <h2>Resources</h2>
         <ul>
-          <li><a href="http://prerender.io">Prerender.io</a></li>
-          <li><a href="http://www.ng-newsletter.com/posts/serious-angular-seo.html">ng-newsletter article</a></li>
-          <li><a href="https://docs.angularjs.org/guide/$location">AngularJS Developer Guide/Using $location</a></li>
+          <li><a href="http://prerender.io" target="_blank">Prerender.io</a></li>
+          <li><a href="http://www.ng-newsletter.com/posts/serious-angular-seo.html" target="_blank">ng-newsletter article</a></li>
+          <li><a href="https://docs.angularjs.org/guide/$location" target="_blank">AngularJS Developer Guide/Using $location</a></li>
         </ul>
       </div>
     </div>
