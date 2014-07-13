@@ -80,7 +80,7 @@
         <h3>How it works:</h3> 
         <ul>
           <li>In our routing, change the hashPrefix to <span class="highlight">#!</span></li>
-          <li>Search engines change the request to use <span class="highlight">_escaped_fragment_</span> instead of <span class="highlight">#!</span></li>
+          <li>For search engines, <span class="highlight">_escaped_fragment_</span> is substituted for <span class="highlight">#!</span></li>
           <li><span class="highlight">_escaped_fragment_</span> requests are served pre-rendered HTML.</li>
         </ul>       
       </div>
@@ -89,7 +89,7 @@
       <div class="text-container">
         <h3>How it works, cont:</h3>  
         <ul>
-          <li>Prerender.io uses a headless browser to render the pages.</li>
+          <li>Prerender.io uses Phantom.JS to render the pages.</li>
           <li>Prerender.io takes care of serving the pages. </li>
           <li><a href="https://prerender.io/how-it-works" target="_blank">See detailed explanation.</a></li>
           <li>For Nginx, settings added to the nginx.conf file tell the page location.</li>
@@ -141,8 +141,9 @@
     </div>
     <div class="slider-inner" data-id="slide18" data-title="Test it">
       <div class="text-container">
-        <h3>Replace <span class="highlight">!#</span> with<br><span class="highlight">?_escaped_fragment_=</span></h3>
-        <h3>See rendered html<br>in view source.</h3>
+        <h3>Test your app:</h3>
+        <h4>Replace <span class="highlight">!#</span> with <span class="highlight">?_escaped_fragment_=</span></h3>
+        <h3>Should see rendered html<br>in view source.</h3>
       </div>
     </div>
     <div class="slider-inner" data-id="slide19" data-title="Google">

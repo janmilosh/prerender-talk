@@ -12,9 +12,9 @@ $(document).ready(function() {
       var boxId = $(this).attr('data-id');
       var slideTitle = $(this).attr('data-title');
       var slideId = boxId + '-slide';
-      console.log(boxId);
-      console.log(slideId);
-      console.log(slideTitle);
+      // console.log(boxId);
+      // console.log(slideId);
+      // console.log(slideTitle);
       $(this).attr('id', slideId);
       $('.select-inner').append(
         '<div class="select-box" id="'+ boxId +'"><p>'+ slideTitle +'</p></div>');
@@ -191,6 +191,7 @@ $(document).ready(function() {
     }
     setClassesAndIds();
     slidePrevious();
+    window.scrollTo(0, 0);
     activeSlideId = nextSlideId;
   }
 
@@ -208,6 +209,7 @@ $(document).ready(function() {
     }
     setClassesAndIds();
     slideNext();
+    window.scrollTo(0, 0);
     activeSlideId = nextSlideId;
   }
 
@@ -216,5 +218,17 @@ $(document).ready(function() {
 
   // Navigate to the next slide on swipeleft event
   $('.slider-inner, .slider-nav').on('swipeleft', slideLeft);
+
+  $(document).keyup(function(evt) {
+    if (evt.keyCode === 39) {
+      slideLeft();
+    }
+  });
+
+  $(document).keyup(function(evt) {
+    if (evt.keyCode === 37) {
+      slideRight();
+    }
+  });
     
 });
