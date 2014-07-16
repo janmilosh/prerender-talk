@@ -80,7 +80,7 @@
         <h3>How it works:</h3> 
         <ul>
           <li>In our routing, change the hashPrefix to <span class="highlight">#!</span></li>
-          <li>For search engines, <span class="highlight">_escaped_fragment_</span> is substituted for <span class="highlight">#!</span></li>
+          <li>Search engines will substitute <span class="highlight">_escaped_fragment_</span> for <span class="highlight">#!</span> in their request.</li>
           <li><span class="highlight">_escaped_fragment_</span> requests are served pre-rendered HTML.</li>
         </ul>       
       </div>
@@ -96,65 +96,70 @@
         </ul>      
       </div>
     </div>
-    <div class="slider-inner" data-id="slide10" data-title="#!">
+    <div class="slider-inner" data-id="slide10" data-title="5 Steps">
+      <div class="text-container">
+        <h2>Five Step Setup</h2>
+      </div>
+    </div>
+    <div class="slider-inner" data-id="slide11" data-title="#!">
       <div class="text-container">
         <h2>Turn off HTML5 mode<br>and<br>set the hash prefix.</h2>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide11" data-title="#! img">
+    <div class="slider-inner" data-id="slide12" data-title="#! img">
       <div class="text-container">
         <img class="centered" src="images/hashPrefix.png" width="690" height="467">
       </div>
     </div>
-    <div class="slider-inner" data-id="slide12" data-title="href's">
+    <div class="slider-inner" data-id="slide13" data-title="href's">
       <div class="text-container">
         <h3>Be sure to change<br>href's to <span class="highlight">#!</span></h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide13" data-title="href img">
+    <div class="slider-inner" data-id="slide14" data-title="href img">
       <div class="text-container">
         <img class="centered" src="images/hrefs.png" width="619" height="380">
       </div>
     </div>
-    <div class="slider-inner" data-id="slide14" data-title="meta tag">
+    <div class="slider-inner" data-id="slide15" data-title="meta tag">
       <div class="text-container">
         <h3>Add this meta tag<br>to the head of all pages:</h3>
         <h5 class="code">&lt;meta name="fragment" content="!"&gt;</h5>
         <h5>For pages that don't contain a <span class="highlight">#!</span></h5>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide15" data-title="signup">
+    <div class="slider-inner" data-id="slide16" data-title="signup">
       <div class="text-container">
         <h2>Create <a href="https://prerender.io/signup" target="_blank">Prerender.io</a><br>account.</h2>
         <h3>Get Prerender.io token.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide16" data-title="Nginx.conf">
+    <div class="slider-inner" data-id="slide17" data-title="Nginx.conf">
       <div class="text-container">
         <h2>Modify server config.<br>for serving<br>pre-rendered HTML.</h2>
         <h4><a href="https://gist.github.com/Stanback/6998085" target="_blank">Nginx.conf</a> &rarr; <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-virtual-hosts-server-blocks-on-ubuntu-12-04-lts--3" target="blank">Digital Ocean - Nginx</a></h4>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide17" data-title="Cached">
+    <div class="slider-inner" data-id="slide18" data-title="Cached">
       <div class="text-container">
         <h3>Prerender.io will show your<br><a href="https://prerender.io/" target="_blank">cached pages</a>.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide18" data-title="Test it">
+    <div class="slider-inner" data-id="slide19" data-title="Test it">
       <div class="text-container">
         <h3>Test your app:</h3>
         <h4>Replace <span class="highlight">!#</span> with <span class="highlight">?_escaped_fragment_=</span></h3>
         <h3>Should see rendered html<br>in view source.</h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide19" data-title="Google">
+    <div class="slider-inner" data-id="slide20" data-title="Google">
       <div class="text-container">
         <h2>Google Webmaster Tools</h2>
         <h4>Set up account and verify.</h4>
         <h3>Check <span class="highlight">Fetch as Google</span></h3>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide20" data-title="Problems">
+    <div class="slider-inner" data-id="slide21" data-title="Problems">
       <div class="text-container">
         <h2>Problems</h2>
         <h4>Trouble with Apache (using .htaccess)</h4>
@@ -163,7 +168,7 @@
         <h5>Prerender.io (Todd Hooper) was very responsive.</h5>
       </div>
     </div>
-    <div class="slider-inner" data-id="slide21" data-title="Resources">
+    <div class="slider-inner" data-id="slide22" data-title="Resources">
       <div class="text-container">
         <h2>Resources</h2>
         <ul>
