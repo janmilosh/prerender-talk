@@ -4,6 +4,38 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?-glq395');
+  src:url('../fonts/icomoon.eot?#iefix-glq395') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-glq395') format('woff'),
+    url('../fonts/icomoon.ttf?-glq395') format('truetype'),
+    url('../fonts/icomoon.svg?-glq395#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+  content: "\e600";
+}
+.icon-uniE601:before {
+  content: "\e601";
+}
+
 body {
   margin: 0;
   background: white;
@@ -116,7 +148,9 @@ a {
   height: 150px;
   width: 50%;
   cursor: pointer;
-  color: #E0C8E7;
+  color: #f1f1f1;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .slider-wrapper {
